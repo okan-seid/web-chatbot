@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8" />
+  <title>News Chatbot - RazgradNews</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="chat-container">
+   <h2 class="chat-header">
+  📰 News Chatbot 📰
+  <a href="https://razgradnews.net/" target="_blank">
+    <img src="assets/razgradnews_logo_transparent.png" alt="RazgradNews Logo" class="logo">
+  </a>
+</h2>
+
+    <div id="chat-box"></div>
+
+    <div class="input-area">
+      <input
+        type="text"
+        id="user-input"
+        placeholder="Напиши съобщение / Type a request"
+      />
+      <button onclick="sendMessage()">Изпрати / Send</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

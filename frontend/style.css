@@ -1,0 +1,136 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #89f7fe, #66a6ff);
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat-container {
+  width: 500px;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  margin: 40px auto;
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#chat-box {
+  flex:1;
+  height: 350px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+
+.message {
+  margin: 8px 0;
+  padding: 8px;
+  border-radius: 6px;
+  max-width: 80%;
+}
+
+.user {
+  background: #d1e7ff;
+  align-self: flex-end;
+  margin-left: auto;
+}
+
+.bot {
+  background: #eee;
+}
+
+.input-area {
+  display: flex;
+}
+
+input {
+  flex: 1;
+  padding: 8px;
+}
+
+button {
+  padding: 8px 12px;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.chat-header .logo {
+  height: 120px;
+  width: auto;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.chat-header a:hover .logo {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+.message {
+  max-width: 82%;
+  padding: 10px 12px;
+  margin: 10px 0;
+  border-radius: 12px;
+  line-height: 1.35;
+  font-size: 15px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+.message.user {
+  margin-left: auto;
+  background: rgba(120, 180, 255, 0.35);
+  border: 1px solid rgba(120, 180, 255, 0.55);
+}
+
+.message.bot {
+  margin-right: auto;
+  background: rgba(245, 245, 245, 0.9);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.message.bot ul {
+  margin: 8px 0 0 0;
+  padding-left: 18px;
+}
+
+.message.bot li {
+  margin: 6px 0;
+}
+
+.message.bot a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.message.bot a:hover {
+  text-decoration: underline;
+}
+
+.message.bot strong {
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
+.news-header {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.message.bot em {
+  font-style: normal;
+  font-weight: 600;
+  color: #333;
+}
