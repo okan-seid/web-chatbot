@@ -20,7 +20,11 @@ async function sendMessage() {
   addMessage(message, "user");
   input.value = "";
 
-  const response = await fetch("http://localhost:3000/api/chat", {
+  //локален backend
+  //const response = await fetch("http://localhost:3000/api/chat", {
+
+  //cloud backend
+  const response = await fetch("https://web-chatbot-py3z.onrender.com/api/chat", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
