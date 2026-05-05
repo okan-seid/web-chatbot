@@ -63,13 +63,16 @@ router.post("/", async (req, res) => {
         });
       }
 
+      const label = CATEGORY_MAP.find(c => c.category === contextCategory)?.label || "";
+      const cleanLabel = label.replace(/^[^\w]+/, "").replace("Новини от ", "");
+
       return res.json({
-        reply: "Още новини",
+        reply: `Още новини от ${cleanLabel}`,
         category: contextCategory,
         nextOffset: contextOffset + moreNews.length,
         news: moreNews.map(n => ({
-          title: n.title,
-          url: n.url
+        title: n.title,
+        url: n.url
         }))
       });
     }
