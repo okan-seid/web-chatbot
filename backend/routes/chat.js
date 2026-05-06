@@ -3,18 +3,18 @@ const router = express.Router();
 const News = require("../models/News");
 
 const CATEGORY_MAP = [
-  { keys: ["криминални", "криминална", "криминално", "крими", "crime", "crimes", "criminal"], category: "kriminalni", label: "🚓 Криминални новини" },
-  { keys: ["инциденти", "инцидент", "incidents", "incident"], category: "intsidenti", label: "⚠️ Инциденти" },
-  { keys: ["предстоящо", "предстоящ", "предстоящи", "upcoming"], category: "predstoyashto", label: "📅 Предстоящо" },
-  { keys: ["разград", "града", "razgrad"], category: "razgrad", label: "🏙️ Новини от Разград" },
-  { keys: ["областта", "област", "областни", "region", "oblast", "district"], category: "oblastta", label: "🗺️ Областта" },
-  { keys: ["българия", "bulgaria"], category: "bulgaria", label: "🇧🇬 България" },
-  { keys: ["свят", "света", "светът", "world"], category: "svyat", label: "🌍 Свят" },
-  { keys: ["спорт", "спортни", "sport", "sports"], category: "sport", label: "🏅 Спорт" },
-  { keys: ["подкасти", "подкаст", "podcast", "podcasts"], category: "podkasti", label: "🎙️ Подкасти" },
-  { keys: ["любопитно", "любопитни", "interesting"], category: "lyubopitno", label: "😄 Любопитно" },
-  { keys: ["гласът", "гласа", "voice"], category: "glasat_na_razgrad", label: "🗞️ Гласът на Разград" },
-  { keys: ["най-нови новини", "нови новини", "покажи новини", "последни новини", "новини", "скорошни новини", "show news", "latest news", "recent news"], category: "homepage", label: "📰 Последни новини" }
+  { keys: ["криминални", "криминална", "криминално", "крими", "crime", "crimes", "criminal"], category: "kriminalni", label: "🚓 Криминални новини", shortLabel: "Криминални" },
+  { keys: ["инциденти", "инцидент", "incidents", "incident"], category: "intsidenti", label: "⚠️ Инциденти", shortLabel: "Инциденти" },
+  { keys: ["предстоящо", "предстоящ", "предстоящи", "upcoming"], category: "predstoyashto", label: "📅 Предстоящо", shortLabel: "Предстоящи" },
+  { keys: ["разград", "града", "razgrad"], category: "razgrad", label: "🏙️ Новини от Разград", shortLabel: "Разград"},
+  { keys: ["областта", "област", "областни", "region", "oblast", "district"], category: "oblastta", label: "🗺️ Областта", shortLabel: "Областта" },
+  { keys: ["българия", "bulgaria"], category: "bulgaria", label: "🇧🇬 България", shortLabel: "България" },
+  { keys: ["свят", "света", "светът", "world"], category: "svyat", label: "🌍 Свят", shortLabel: "Света"},
+  { keys: ["спорт", "спортни", "sport", "sports"], category: "sport", label: "🏅 Спорт", shortLabel: "Спорт" },
+  { keys: ["подкасти", "подкаст", "podcast", "podcasts"], category: "podkasti", label: "🎙️ Подкасти", shortLabel: "Подкасти" },
+  { keys: ["любопитно", "любопитни", "interesting"], category: "lyubopitno", label: "😄 Любопитно", shortLabel: "Любопитни" },
+  { keys: ["гласът", "гласа", "voice"], category: "glasat_na_razgrad", label: "🗞️ Гласът на Разград", shortLabel: "Гласът на Разград" },
+  { keys: ["най-нови новини", "нови новини", "покажи новини", "последни новини", "новини", "скорошни новини", "show news", "latest news", "recent news"], category: "homepage", label: "📰 Последни новини", shortLabel: "Последни" }
 ];
 
 router.post("/", async (req, res) => {
@@ -26,7 +26,7 @@ router.post("/", async (req, res) => {
     //Ако няма text input
     if (!message) {
       return res.json({
-        reply: "Напиши например: „спорт“, „криминални“, „новини от Разград“."
+        reply: "Напиши например: „новини от Разград“, „областта“, „предстоящи“ и др."
       });
     }
 
@@ -63,18 +63,18 @@ router.post("/", async (req, res) => {
         });
       }
 
-      const label = CATEGORY_MAP.find(c => c.category === contextCategory)?.label || "";
-      const cleanLabel = label.replace(/^[^\w]+/, "").replace("Новини от ", "");
+      const categoryInfo = CATEGORY_MAP.find(c => c.category === contextCategory);
+      const categoryName = categoryInfo?.shortLabel || contextCategory;
 
       return res.json({
-        reply: `Още новини от ${cleanLabel}`,
+        reply: `Още новини от ${categoryName}`,
         category: contextCategory,
         nextOffset: contextOffset + moreNews.length,
         news: moreNews.map(n => ({
-        title: n.title,
-        url: n.url
+          title: n.title,
+          url: n.url
         }))
-      });
+          });
     }
 
     //Намиране категорията по ключови думи
