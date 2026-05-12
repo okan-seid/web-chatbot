@@ -84,6 +84,9 @@ def scrape_source(source):
     response = requests.get(url, headers=HEADERS, timeout=10)
     soup = BeautifulSoup(response.text, "html.parser")
 
+    # Изтриване на старите записи за всяка категория във вече съществуващата база данни
+    collection.delete_many({"category": category})
+
     found = 0
     rank = 0
     limit = None
