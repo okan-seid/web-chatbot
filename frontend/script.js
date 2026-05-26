@@ -11,6 +11,9 @@ function addMessage(html, sender) {
   chatBox.scrollTop = chatBox.scrollHeight;
 }
 
+const loadingContainer = document.getElementById("loading-container");
+const loadingBar = document.getElementById("loading-bar");
+
 async function sendMessage() {
   const input = document.getElementById("user-input");
   const message = input.value.trim();
@@ -19,6 +22,18 @@ async function sendMessage() {
 
   addMessage(message, "user");
   input.value = "";
+
+  loadingContainer.style.display = "block";
+  loadingBar.style.width = "0%";
+
+  let progress = 0;
+
+  const interval = setInterval(() => {
+    if (progress < 90) {
+      progress += 10;
+      loadingBar.style.width = progress + "%";
+  }
+}, 100);
 
   //локален backend
   //const response = await fetch("http://localhost:3000/api/chat", {
@@ -37,6 +52,15 @@ async function sendMessage() {
   });
 
   const data = await response.json();
+
+  clearInterval(interval);
+
+  loadingBar.style.width = "100%";
+
+  setTimeout(() => {
+    loadingContainer.style.display = "none";
+    loadingBar.style.width = "0%";
+}, 300);
 
   if (data.category) {
   lastCategory = data.category;
