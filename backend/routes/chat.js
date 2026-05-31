@@ -14,7 +14,7 @@ const CATEGORY_MAP = [
   { keys: ["подкасти", "подкаст", "podcast", "podcasts"], category: "podkasti", label: "🎙️ Подкасти", shortLabel: "Подкасти" },
   { keys: ["любопитно", "любопитни", "interesting"], category: "lyubopitno", label: "😄 Любопитно", shortLabel: "Любопитни" },
   { keys: ["гласът", "гласа", "voice"], category: "glasat_na_razgrad", label: "🗞️ Гласът на Разград", shortLabel: "Гласът на Разград" },
-  { keys: ["покажи новини", "последни новини", "най-нови новини", "нови новини", "актуални новини", "скорошни новини", "новини", "последни", "актуални",
+  { keys: ["покажи новини", "последни новини", "най-нови новини", "нови новини", "актуални новини", "скорошни новини", "последни", "актуални",
     "нови", "latest news", "recent news", "show news", "show latest news", "latest", "recent", "news"], category: "homepage", label: "📰 Последни новини", shortLabel: "Последни" }
 ];
 
