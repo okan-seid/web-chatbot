@@ -46,7 +46,7 @@ router.post("/", async (req, res) => {
       }
 
       let query = { category: contextCategory };
-      let sort = { published_at: -1, rank: 1, scraped_at: -1 };
+      let sort = { rank: 1, scraped_at: -1 };
 
       //Homepage от featured grid-а
       if (contextCategory === "homepage") {
@@ -99,7 +99,7 @@ router.post("/", async (req, res) => {
 
     //Fetch новини по категория
     let query = { category: matched.category };
-    let sort = { published_at: -1, rank: 1, scraped_at: -1 };
+    let sort = { rank: 1, scraped_at: -1 };
 
     //за homepage
     if (matched.category === "homepage") {
