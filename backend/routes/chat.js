@@ -15,7 +15,7 @@ const CATEGORY_MAP = [
   { keys: ["любопитно", "любопитни", "interesting"], category: "lyubopitno", label: "😄 Любопитно", shortLabel: "Любопитни" },
   { keys: ["гласът", "гласа", "voice"], category: "glasat_na_razgrad", label: "🗞️ Гласът на Разград", shortLabel: "Гласът на Разград" },
   { keys: ["покажи новини", "последни новини", "най-нови новини", "нови новини", "актуални новини", "скорошни новини", "последни", "актуални",
-    "нови", "latest news", "recent news", "show news", "show latest news", "latest", "recent", "news"], category: "homepage", label: "📰 Последни новини", shortLabel: "Последни" }
+    "latest news", "recent news", "show news", "show latest news", "latest", "recent", "news"], category: "homepage", label: "📰 Последни новини", shortLabel: "Последни" }
 ];
 
 router.post("/", async (req, res) => {
@@ -107,7 +107,8 @@ router.post("/", async (req, res) => {
     }
 
     const limit = (matched.category === "homepage") ? 13 : 5;
-    console.log("MATCHED CATEGORY:", matched.category);
+    console.log("Message:", message);
+    console.log("Matched category:", matched.category);
 
     const news = await News.find(query)
       .sort(sort)
