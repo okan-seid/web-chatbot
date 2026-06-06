@@ -106,7 +106,7 @@ router.post("/", async (req, res) => {
       sort = { rank: 1, scraped_at: -1 };
     }
 
-    const limit = (matched.category === "homepage") ? 13 : 5;
+    const limit = (matched.category === "homepage") ? 9 : 5;
     console.log("Message:", message);
     console.log("Matched category:", matched.category);
 

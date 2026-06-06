@@ -115,7 +115,7 @@ def scrape_source(source):
     rank = 0
     limit = 10
     if category == "homepage":
-        limit = 13
+        limit = 9
 
     seen = set()
 
