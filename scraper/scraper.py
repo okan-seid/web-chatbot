@@ -55,48 +55,76 @@ SOURCES = [
         "category": "homepage"
     },
     {
-        "url": "https://razgradnews.net/kategoria/novini-ot-razgrad",
+        "url": "https://razgradnews.net/novini-ot-razgrad",
         "category": "razgrad"
     },
     {
-        "url": "https://razgradnews.net/kategoria/novini-ot-razgrad/predstoyashto",
+        "url": "https://razgradnews.net/novini-ot-razgrad/predstoyashto",
         "category": "predstoyashto"
     },
     {
-        "url": "https://razgradnews.net/kategoria/novini-ot-razgrad/kriminalni-novini-razgrad",
+        "url": "https://razgradnews.net/novini-ot-razgrad/kriminalni-novini-razgrad",
         "category": "kriminalni"
     },
     {
-        "url": "https://razgradnews.net/kategoria/novini-ot-razgrad/intsidenti",
+        "url": "https://razgradnews.net//novini-ot-razgrad/intsidenti",
         "category": "intsidenti"
     },
     {
-        "url": "https://razgradnews.net/kategoria/oblastta",
+        "url": "https://razgradnews.net/oblastta",
         "category": "oblastta"
     },
     {
-        "url": "https://razgradnews.net/kategoria/bulgaria",
+        "url": "https://razgradnews.net/bulgaria",
         "category": "bulgaria"
     },
     {
-        "url": "https://razgradnews.net/kategoria/podkasti",
+        "url": "https://razgradnews.net/podkasti",
         "category": "podkasti"
     },
     {
-        "url": "https://razgradnews.net/kategoria/sport-v-razgrad",
+        "url": "https://razgradnews.net/sport-v-razgrad",
         "category": "sport"
     },
     {
-        "url": "https://razgradnews.net/kategoria/lyubopitno",
+        "url": "https://razgradnews.net/ludogorets",
+        "category": "ludogorets"
+    },
+    {
+        "url": "https://razgradnews.net/lyubopitno",
         "category": "lyubopitno"
     },
     {
-        "url": "https://razgradnews.net/kategoria/glasat-na-razgrad",
+        "url": "https://razgradnews.net/glasat-na-razgrad",
         "category": "glasat_na_razgrad"
     },
     {
-        "url": "https://razgradnews.net/kategoria/svyat",
+        "url": "https://razgradnews.net/svyat",
         "category": "svyat"
+    },
+    {
+        "url": "https://razgradnews.net/oblastta/zavet",
+        "category": "zavet"
+    },
+    {
+        "url": "https://razgradnews.net/oblastta/isperih",
+        "category": "isperih"
+    },
+    {
+        "url": "https://razgradnews.net/oblastta/kubrat",
+        "category": "kubrat"
+    },
+    {
+        "url": "https://razgradnews.net/oblastta/loznitsa",
+        "category": "loznitsa"
+    },
+    {
+        "url": "https://razgradnews.net/oblastta/samuil",
+        "category": "samuil"
+    },
+    {
+        "url": "https://razgradnews.net/oblastta/tsar-kaloyan",
+        "category": "tsar-kaloyan"
     }
 ]
 
