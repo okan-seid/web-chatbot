@@ -3,7 +3,8 @@ const mongoose = require("mongoose");
 const NewsSchema = new mongoose.Schema({
   title: String,
   url: String,
-  source: String,
+  category: String,
+  rank: Number,
   scraped_at: Date
 });
 
