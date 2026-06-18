@@ -27,7 +27,7 @@ router.get("/category/:category", async (req, res) => {
     const { category } = req.params;
 
     const news = await News.find({ category })
-      .sort({ rank: 1, scrapedAt: -1 })
+      .sort({ rank: 1, scraped_at: -1 })
       .limit(10);
 
     res.json(news);
