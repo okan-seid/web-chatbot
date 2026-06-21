@@ -3,7 +3,7 @@ const router = express.Router();
 const News = require("../models/News");
 
 const CATEGORY_MAP = [
-  { keys: ["криминални", "криминална", "криминално", "крими", "crime", "crimes", "criminal"], category: "kriminalni", label: "🚓 Криминални новини", shortLabel: "Криминални" },
+  { keys: ["криминални", "криминална", "криминално", "крими", "crime", "crimes", "criminal"], category: "kriminalni", label: "🚓 Криминални", shortLabel: "Криминални" },
   { keys: ["инциденти", "инцидент", "incidents", "incident"], category: "intsidenti", label: "⚠️ Инциденти", shortLabel: "Инциденти" },
   { keys: ["предстоящо", "предстоящ", "предстоящи", "upcoming"], category: "predstoyashto", label: "📅 Предстоящо", shortLabel: "Предстоящи" },
   { keys: ["разград", "града", "razgrad"], category: "razgrad", label: "🏙️ Новини от Разград", shortLabel: "Разград" },
