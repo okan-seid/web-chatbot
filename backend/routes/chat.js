@@ -9,7 +9,7 @@ const CATEGORY_MAP = [
   { keys: ["разград", "града", "razgrad"], category: "razgrad", label: "🏙️ Новини от Разград", shortLabel: "Разград" },
   { keys: ["областта", "област", "областни", "region", "oblast", "district"], category: "oblastta", label: "🗺️ Областта", shortLabel: "Областта" },
   { keys: ["българия", "bulgaria"], category: "bulgaria", label: "🇧🇬 България", shortLabel: "България" },
-  { keys: ["свят", "света", "светът", "world"], category: "svyat", label: "🌍 Свят", shortLabel: "Света" },
+  { keys: ["свят", "света", "светът", "световни", "world", "worldwide"], category: "svyat", label: "🌍 Свят", shortLabel: "Света" },
   { keys: ["спорт", "спортни", "sport", "sports"], category: "sport", label: "🏅 Спорт", shortLabel: "Спорт" },
   { keys: ["лудогорец", "ludogorets", "ludogorec"], category: "ludogorets", label: "🏅 Лудогорец", shortLabel: "Лудогорец" },
   { keys: ["подкасти", "подкаст", "podcast", "podcasts"], category: "podkasti", label: "🎙️ Подкасти", shortLabel: "Подкасти" },
@@ -54,11 +54,6 @@ router.post("/", async (req, res) => {
 
       let query = { category: contextCategory };
       let sort = { rank: 1, scraped_at: -1 };
-
-      //Homepage от featured grid-а
-      if (contextCategory === "homepage") {
-        sort = { rank: 1, scraped_at: -1 };
-      }
 
       const moreNews = await News.find(query)
         .sort(sort)
@@ -107,11 +102,6 @@ router.post("/", async (req, res) => {
     //Fetch новини по категория
     let query = { category: matched.category };
     let sort = { rank: 1, scraped_at: -1 };
-
-    //за homepage
-    if (matched.category === "homepage") {
-      sort = { rank: 1, scraped_at: -1 };
-    }
 
     const limit = (matched.category === "homepage") ? 9 : 5;
     console.log("Message:", message);
