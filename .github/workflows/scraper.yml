@@ -2,8 +2,8 @@ name: Run RazgradNews Scraper
 
 on:
   schedule:
-    - cron: "0 6 * * *"
-
+    - cron: "15 9 * * *"
+      timezone: "Europe/Sofia"
   workflow_dispatch:
 
 jobs:
